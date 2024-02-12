@@ -9,6 +9,8 @@
     "react/jsx-indent-props": ["error", 2],
     "react/jsx-first-prop-new-line": ["error", "multiline"],
     "react/jsx-curly-newline": ["error", { "multiline": "consistent", "singleline": "consistent" }],
-    "react/jsx-props-no-multi-spaces": "error"
+    "react/jsx-props-no-multi-spaces": "error",
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"]
   }
 }

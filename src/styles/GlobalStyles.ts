@@ -6,6 +6,10 @@ const styles = css`
     padding: 0;
     box-sizing: border-box;
   }
+  html, body {
+    background-color: ${props => props.theme.colors.graySecondary};
+    height: 100%;
+  }
 `
 
 const GlobalStyles = createGlobalStyle`

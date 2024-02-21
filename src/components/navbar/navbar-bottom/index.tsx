@@ -1,7 +1,8 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { CiSearch } from 'react-icons/ci'
 import { IoMdArrowRoundBack } from 'react-icons/io'
+import ProgressBarComponent from '@components/progress-bar'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
@@ -116,6 +117,7 @@ const NavbarBottomComponent = ({ sticky }: INavbarBottom) => {
           </form>
         </div>
       </Navbar>
+      {sticky && <ProgressBarComponent />}
     </NavbarBottomWrapper>
   )
 }

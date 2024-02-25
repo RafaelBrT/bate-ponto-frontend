@@ -7,6 +7,13 @@ const theme = {
     gray: '#E4E4E4',
     graySecondary: '#F8F8F8',
   },
+  media: {
+    sm: '576px',
+    md: '768px',
+    lg: '992px',
+    xl: '1200px',
+    xxl: '1400px'
+  }
 }
 
 export default theme

@@ -9,6 +9,7 @@ export const FooterTop = styled.div`
   align-items: center;
   justify-content: center;
   padding: 3rem 0rem;
+  flex-direction: column;
   .title {
     font-size: 22px;
     font-weight: bold;
@@ -24,6 +25,10 @@ export const FooterTop = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
+  }
+
+  @media (min-width: ${props => props.theme.media.md}) {
+    flex-direction: row;
   }
 `
 
@@ -44,4 +49,5 @@ export const FooterBottom = styled.div`
   color: ${props => props.theme.colors.white};
   gap: 0.5rem;
   padding: 1rem 0rem;
+  text-align: center;
 `

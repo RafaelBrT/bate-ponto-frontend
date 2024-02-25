@@ -79,7 +79,7 @@ export const NavbarBottomWrapper = styled.header`
       }
     }
 
-   @media only screen and (min-width: 48rem) {
+   @media (min-width: ${props => props.theme.media.md}) {
     width: 100%;
     position: relative;
     top: 0;
@@ -129,7 +129,7 @@ export const NavbarBottomWrapper = styled.header`
       background: hsl(0, 0%, 10%);
     }
 
-    @media only screen and (min-width: 48rem) {
+    @media (min-width: ${props => props.theme.media.md}) {
       display: none;
       visibility: hidden;
     }

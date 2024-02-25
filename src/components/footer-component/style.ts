@@ -6,10 +6,11 @@ export const FooterComponentWrapper = styled.div`
 
 export const FooterTop = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
   padding: 3rem 0rem;
+  gap: 1.2rem;
   flex-direction: column;
+  align-items: center;
   .title {
     font-size: 22px;
     font-weight: bold;
@@ -19,16 +20,28 @@ export const FooterTop = styled.div`
   }
   .description {
     font-size: 16px;
+    &.ul {
+      list-style-type: none;
+      max-height: 80px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
   }
   .div-left, .div-center, .div-right {
     max-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
+    width: 40%;
   }
 
   @media (min-width: ${props => props.theme.media.md}) {
     flex-direction: row;
+    align-items: start;
+    .div-left, .div-center, .div-right {
+      width: inherit;
+    }
   }
 `
 
@@ -38,6 +51,23 @@ export const FooterMedia = styled.div`
   align-items: center;
   gap: 0.8rem;
   padding-bottom: 1rem;
+  font-size: 2rem;
+  .icon {
+    &__animation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__whatsapp {
+      color: #49C355;
+    }
+    &__facebook {
+      color: #1773EA;
+    }
+    &__instagram {
+      color: #D83870;
+    }
+  }
 `
 
 export const FooterBottom = styled.div`

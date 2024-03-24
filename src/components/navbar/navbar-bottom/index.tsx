@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CiSearch } from 'react-icons/ci'
 import { IoMdArrowRoundBack } from 'react-icons/io'
 import ProgressBarComponent from '@components/progress-bar'
@@ -9,10 +9,14 @@ import Link from 'next/link'
 import { INavbarBottom } from './interfaces/navbar-bottom-interface'
 import { Logo, Navbar, NavbarBottomWrapper } from './style'
 
-const NavbarBottomComponent = ({ sticky }: INavbarBottom) => {
+const NavbarBottomComponent = ({ sticky, isMobile }: INavbarBottom) => {
 
   const [searchOpen, setSearchOpen] = useState(false)
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false)
+
+  useEffect(() => {
+    !isMobile && setBurgerMenuOpen(false)
+  }, [isMobile])
 
   return (
     <NavbarBottomWrapper className={sticky ? 'sticky' : ''}>

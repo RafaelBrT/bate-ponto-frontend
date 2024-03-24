@@ -9,28 +9,43 @@ import { FirstHalf, NavbarWrapper, SecondHalf } from './style'
 
 const NavbarComponent = () => {
   const [isSticky, setIsSticky] = useState<boolean>(false)
+  const [isMobile, setIsMobile] = useState<boolean>(false)
   const stickyStart = headerHeight
 
   useEffect(() => {
+    setIsMobile(window?.innerWidth >= 768 ? false : true)
+
     const handleScroll = () => {
       setIsSticky(window.scrollY > stickyStart)
     }
 
+    const handleResize = (event: Event) => {
+      const target = event.target as Window
+      setIsMobile(target.innerWidth >= 768 ? false : true)
+    }
+
     window.addEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleResize)
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
     }
   }, [])
 
   return (
     <NavbarWrapper>
-      <FirstHalf>
-        <LogoTopComponnet />
-      </FirstHalf>
+      {!isMobile && (
+        <FirstHalf>
+          <LogoTopComponnet />
+        </FirstHalf>
+      )}
       <SecondHalf>
-        <HeaderComponent />
-        <NavbarBottomComponent sticky={isSticky} />
+        {!isMobile && <HeaderComponent />}
+        <NavbarBottomComponent
+          sticky={isSticky || isMobile}
+          isMobile={isMobile}
+        />
       </SecondHalf>
     </NavbarWrapper>
   )

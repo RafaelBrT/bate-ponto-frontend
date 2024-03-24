@@ -22,8 +22,7 @@ const Plop = (plop) => {
     ],
     onComplete: () => {
       console.log('Componente gerado com sucesso!')
-    },
-    message: 'opa'
+    }
   })
 }
 

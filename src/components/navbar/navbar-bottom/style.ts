@@ -9,7 +9,6 @@ export const Navbar = styled.nav`
   width: 100%;
   height: 60px;
   margin: 0 auto;
-  overflow-x: hidden;
   &.container {
     max-width: 75rem;
     margin: 0 auto;
@@ -45,7 +44,6 @@ export const NavbarBottomWrapper = styled.header`
     width: 80%;
     height: 100%;
     z-index: 10;
-    overflow-y: auto;
     background-color: hsl(0, 0%, 100%);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
         0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -84,10 +82,23 @@ export const NavbarBottomWrapper = styled.header`
     position: relative;
     top: 0;
     left: 0;
-    height: auto;
+    height: 100%;
     box-shadow: none;
     display: flex;
     justify-content: center;
+
+    .dropdown {
+      z-index: 200;
+      background-color: green;
+      position: absolute;
+      width: 100%;
+      p {
+        border-bottom: 1px solid black;
+        background-color: white;
+        padding: 0.5rem;
+        cursor: pointer;
+      }
+    }
 
     &-inner {
       display: flex;
@@ -95,8 +106,18 @@ export const NavbarBottomWrapper = styled.header`
       column-gap: 1.75rem;
       margin-right: 5rem;
       margin: 0;
+      height: 100%;
+      align-items: center;
+      width: 100%;
     }
-
+    &-item {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    
     &-link {
       text-transform: capitalize;
     }
@@ -105,7 +126,7 @@ export const NavbarBottomWrapper = styled.header`
       margin-left: 2rem;
     }
    }
-}
+  }
 
   .burger {
     position: relative;

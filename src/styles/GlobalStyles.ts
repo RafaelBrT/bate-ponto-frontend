@@ -9,6 +9,7 @@ const styles = css`
   html, body {
     background-color: ${props => props.theme.colors.graySecondary};
     height: 100%;
+    overflow-x: hidden;
   }
 `
 

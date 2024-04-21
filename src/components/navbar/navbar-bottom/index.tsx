@@ -60,7 +60,7 @@ const NavbarBottomComponent = ({ sticky, isMobile }: INavbarBottom) => {
                 Home
               </Link>
             </li>
-            <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+            <div style={{ height: '100%', position: 'relative' }}>
               <li className="menu-item">
                 <Link
                   className="menu-link"

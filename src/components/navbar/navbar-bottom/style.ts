@@ -91,7 +91,7 @@ export const NavbarBottomWrapper = styled.header`
       z-index: 200;
       background-color: green;
       position: absolute;
-      width: 100%;
+      width: fit-content;
       p {
         border-bottom: 1px solid black;
         background-color: white;
@@ -108,11 +108,11 @@ export const NavbarBottomWrapper = styled.header`
       margin: 0;
       height: 100%;
       align-items: center;
+      justify-content: center;
       width: 100%;
     }
     &-item {
       height: 100%;
-      width: 100%;
       display: flex;
       align-items: center;
       position: relative;

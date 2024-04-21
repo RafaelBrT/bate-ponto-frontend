@@ -7,7 +7,31 @@ export default function Home() {
   return (
     <main>
       <NavbarComponent />
-      <CarouselComponent />
+      <CarouselComponent
+        items={
+          [
+            {
+              original: '/images/banner1.jpg',
+              thumbnail: '/images/banner1.jpg'
+            },
+            {
+              original: '/images/banner1.jpg',
+              thumbnail: '/images/banner1.jpg'
+            },
+            {
+              original: '/images/banner1.jpg',
+              thumbnail: '/images/banner1.jpg'
+            },
+          ]
+        }
+        showBullets={true}
+        thumbnailPosition='bottom'
+        showThumbnails={false}
+        autoplay={true}
+        showPlayButton={true}
+        showFullscreenButton={true}
+        showNav={true}
+      />
       <BestsellersComponent />
       <FooterComponent />
     </main>

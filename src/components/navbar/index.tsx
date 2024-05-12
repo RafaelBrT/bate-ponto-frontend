@@ -17,18 +17,24 @@ const NavbarComponent = () => {
       title: 'Home'
     },
     {
-      title: 'Produtos'
-    },
-    {
-      title: 'Acessórios',
+      title: 'Produtos',
       dropdown: [
         {
           title: 'Relógios Informatizados',
         },
         {
-          title: 'Relógios Informatizados',
+          title: 'Relógios Cartográficos',
+        },
+        {
+          title: 'Controle de ronda',
+        },
+        {
+          title: 'Catracas',
         },
       ]
+    },
+    {
+      title: 'Acessórios'
     },
     {
       title: 'Software'

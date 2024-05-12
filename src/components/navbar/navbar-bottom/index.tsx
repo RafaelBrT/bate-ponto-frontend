@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { CiSearch } from 'react-icons/ci'
 import { IoMdArrowRoundBack } from 'react-icons/io'
+import { IoIosArrowDown } from 'react-icons/io'
 import ProgressBarComponent from '@components/progress-bar'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -66,6 +67,7 @@ const NavbarBottomComponent = ({ sticky, isMobile, menuOptions }: INavbarBottom)
                     onClick={() => setBurgerMenuOpen(false)}
                   >
                     {menu.title}
+                    {menu.dropdown && <IoIosArrowDown />}
                   </Link>
                 </li>
                 {dropdownIndex === index && menu.dropdown && (

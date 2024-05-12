@@ -71,6 +71,9 @@ export const NavbarBottomWrapper = styled.header`
       text-transform: uppercase;
       color: hsl(0, 0%, 10%);
       transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
 
       &:hover {
         color: hsl(221, 83%, 55%);

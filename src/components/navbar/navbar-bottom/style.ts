@@ -91,12 +91,17 @@ export const NavbarBottomWrapper = styled.header`
       z-index: 200;
       background-color: green;
       position: absolute;
-      width: fit-content;
+      width: max-content;
       p {
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid ${props => props.theme.colors.gray};
         background-color: white;
         padding: 0.5rem;
         cursor: pointer;
+        &:hover {
+          color: ${props => props.theme.colors.white
+          };
+          background: ${props => props.theme.colors.secondary};
+        }
       }
     }
 

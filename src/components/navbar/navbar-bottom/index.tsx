@@ -9,10 +9,11 @@ import Link from 'next/link'
 import { INavbarBottom } from './interfaces/navbar-bottom-interface'
 import { Logo, Navbar, NavbarBottomWrapper } from './style'
 
-const NavbarBottomComponent = ({ sticky, isMobile }: INavbarBottom) => {
+const NavbarBottomComponent = ({ sticky, isMobile, menuOptions }: INavbarBottom) => {
 
   const [searchOpen, setSearchOpen] = useState(false)
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false)
+  const [dropdownIndex, setDropdownIndex] = useState<number|null>()
 
   useEffect(() => {
     !isMobile && setBurgerMenuOpen(false)
@@ -51,57 +52,33 @@ const NavbarBottomComponent = ({ sticky, isMobile }: INavbarBottom) => {
           id="menu"
         >
           <ul className="menu-inner">
-            <li className="menu-item">
-              <Link
-                className="menu-link"
-                href="#"
-                onClick={() => setBurgerMenuOpen(false)}
+            {menuOptions.map((menu, index) => (
+              <div
+                key={index}
+                style={{ height: '100%', position: 'relative' }}
+                onMouseEnter={() => setDropdownIndex(index)}
+                onMouseLeave={() => setDropdownIndex(null)}
               >
-                Home
-              </Link>
-            </li>
-            <div style={{ height: '100%', position: 'relative' }}>
-              <li className="menu-item">
-                <Link
-                  className="menu-link"
-                  href="#"
-                  onClick={() => setBurgerMenuOpen(false)}
-                >
-                  About
-                </Link>
-              </li>
-              <div className="dropdown">
-                <p>teste1</p>
-                <p>teste2</p>
+                <li className="menu-item">
+                  <Link
+                    className="menu-link"
+                    href="#"
+                    onClick={() => setBurgerMenuOpen(false)}
+                  >
+                    {menu.title}
+                  </Link>
+                </li>
+                {dropdownIndex === index && menu.dropdown && (
+                  <div className="dropdown">
+                    {menu.dropdown.map((dropdown, index) => (
+                      <p key={index}>
+                        {dropdown.title}
+                      </p>
+                    ))}
+                  </div>
+              )}
               </div>
-            </div>
-            <li className="menu-item">
-              <Link
-                className="menu-link"
-                href="#"
-                onClick={() => setBurgerMenuOpen(false)}
-              >
-                Service
-              </Link>
-            </li>
-            <li className="menu-item">
-              <Link
-                className="menu-link"
-                href="#"
-                onClick={() => setBurgerMenuOpen(false)}
-              >
-                Project
-              </Link>
-            </li>
-            <li className="menu-item">
-              <Link
-                className="menu-link"
-                href="#"
-                onClick={() => setBurgerMenuOpen(false)}
-              >
-                Support
-              </Link>
-            </li>
+            ))}
           </ul>
         </div>
         <span>

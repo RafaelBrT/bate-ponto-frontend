@@ -5,12 +5,41 @@ import LogoTopComponnet from '@components/logo-top'
 import NavbarBottomComponent from '@components/navbar/navbar-bottom'
 import { headerHeight } from '@styles/global-vars'
 
+import { MenuOptions } from './navbar-bottom/interfaces/navbar-bottom-interface'
 import { FirstHalf, NavbarWrapper, SecondHalf } from './style'
 
 const NavbarComponent = () => {
   const [isSticky, setIsSticky] = useState<boolean>(false)
   const [isMobile, setIsMobile] = useState<boolean>(false)
   const stickyStart = headerHeight
+  const menuOptions: MenuOptions[] = [
+    {
+      title: 'Home'
+    },
+    {
+      title: 'Produtos'
+    },
+    {
+      title: 'Acessórios',
+      dropdown: [
+        {
+          title: 'Relógios Informatizados',
+        },
+        {
+          title: 'Relógios Informatizados',
+        },
+      ]
+    },
+    {
+      title: 'Software'
+    },
+    {
+      title: 'Sobre'
+    },
+    {
+      title: 'Contato'
+    }
+  ]
 
   useEffect(() => {
     setIsMobile(window?.innerWidth >= 768 ? false : true)
@@ -45,6 +74,7 @@ const NavbarComponent = () => {
         <NavbarBottomComponent
           sticky={isSticky || isMobile}
           isMobile={isMobile}
+          menuOptions={menuOptions}
         />
       </SecondHalf>
     </NavbarWrapper>

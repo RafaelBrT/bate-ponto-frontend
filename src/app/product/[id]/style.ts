@@ -32,6 +32,7 @@ export const ItemInfo = styled.div`
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   -moz-box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 5px;
   .title {
     font-size: 22px;
     color: ${props => props.theme.colors.primary};
@@ -49,4 +50,8 @@ export const ItemInfo = styled.div`
     border-radius: 5px;
     cursor: pointer;
   }
+`
+
+export const TabComponentWrapper = styled.div`
+  margin-top: 1rem;
 `

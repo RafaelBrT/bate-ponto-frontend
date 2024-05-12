@@ -16,16 +16,26 @@ export const Card = styled.div`
   `
 export const CardTop = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  @media (min-width: ${props => props.theme.media.md}) {
+    flex-direction: row;
+    gap: 0;
+  }
 `
 
 export const ItemsCarouselWrapper = styled.div`
-  width: 50%;
+  width: 100%;
+  @media (min-width: ${props => props.theme.media.md}) {
+    width: 50%;
+  }
 `
 
 export const ItemInfo = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
   padding: 1rem;
   gap: 1.5rem;
   margin-left: 0.5rem;
@@ -49,6 +59,9 @@ export const ItemInfo = styled.div`
     color: ${props => props.theme.colors.white};
     border-radius: 5px;
     cursor: pointer;
+  }
+  @media (min-width: ${props => props.theme.media.md}) {
+    width: 50%;
   }
 `
 

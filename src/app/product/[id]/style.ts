@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ProductPageWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin: 2rem 0;
 `
 
 export const Card = styled.div`
@@ -13,7 +13,8 @@ export const Card = styled.div`
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   -moz-box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-  `
+`
+
 export const CardTop = styled.div`
   display: flex;
   flex-direction: column;

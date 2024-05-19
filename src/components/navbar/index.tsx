@@ -14,7 +14,8 @@ const NavbarComponent = () => {
   const stickyStart = headerHeight
   const menuOptions: MenuOptions[] = [
     {
-      title: 'Home'
+      title: 'Home',
+      link: '/'
     },
     {
       title: 'Produtos',
@@ -40,7 +41,8 @@ const NavbarComponent = () => {
       title: 'Software'
     },
     {
-      title: 'Sobre'
+      title: 'Sobre',
+      link: 'about'
     },
     {
       title: 'Contato'

@@ -63,7 +63,7 @@ const NavbarBottomComponent = ({ sticky, isMobile, menuOptions }: INavbarBottom)
                 <li className="menu-item">
                   <Link
                     className="menu-link"
-                    href="#"
+                    href={menu?.link || '#'}
                     onClick={() => setBurgerMenuOpen(false)}
                   >
                     {menu.title}

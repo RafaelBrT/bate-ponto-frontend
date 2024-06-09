@@ -45,7 +45,8 @@ const NavbarComponent = () => {
       link: 'about'
     },
     {
-      title: 'Contato'
+      title: 'Contato',
+      link: 'contact'
     }
   ]
 
